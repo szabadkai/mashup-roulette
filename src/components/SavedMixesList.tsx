@@ -34,13 +34,13 @@ export default function SavedMixesList({ mixes, onLoad, onDelete }: Props) {
           <div className="flex-1 min-w-0">
             <p className="text-xs font-body text-cream truncate">{mix.name}</p>
             <p className="text-xs text-muted font-mono" style={{ fontSize: '0.6rem' }}>
-              {mix.tempo}x · blend {mix.blend}% · {formatDate(mix.createdAt)}
+              {mix.leftTempo}x/{mix.rightTempo}x · blend {mix.blend}% · {formatDate(mix.createdAt)}
             </p>
           </div>
           <button
             onClick={() => onLoad(mix)}
             className="p-1 rounded transition-colors opacity-60 group-hover:opacity-100"
-            style={{ color: '#FFB800' }}
+            style={{ color: '#FF6B9D' }}
             title="Load mix"
           >
             <Play size={13} fill="currentColor" />

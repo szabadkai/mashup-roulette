@@ -1,0 +1,378 @@
+[
+  {
+    "id": "dQw4w9WgXcQ",
+    "title": "Never Gonna Give You Up",
+    "channel": "Rick Astley",
+    "tags": ["pop", "dance"],
+    "bpm": 113,
+    "category": "80s"
+  },
+  {
+    "id": "Uf3ouaeB6UQ",
+    "title": "Take On Me",
+    "channel": "a-ha",
+    "tags": ["synth", "pop"],
+    "bpm": 169,
+    "category": "80s"
+  },
+  {
+    "id": "9jK-NcRmVcw",
+    "title": "Under Pressure",
+    "channel": "Queen & David Bowie",
+    "tags": ["rock", "collab"],
+    "bpm": 148,
+    "category": "80s"
+  },
+  {
+    "id": "0CFuCYNx_7E",
+    "title": "Billie Jean",
+    "channel": "Michael Jackson",
+    "tags": ["pop", "dance"],
+    "bpm": 117,
+    "category": "80s"
+  },
+  {
+    "id": "FTQbiNvZqaY",
+    "title": "Africa",
+    "channel": "Toto",
+    "tags": ["rock", "pop"],
+    "bpm": 93,
+    "category": "80s"
+  },
+  {
+    "id": "Zi_XLOBDo_Y",
+    "title": "Blue (Da Ba Dee)",
+    "channel": "Eiffel 65",
+    "tags": ["eurodance", "pop"],
+    "bpm": 128,
+    "category": "90s"
+  },
+  {
+    "id": "6Ejga4kJUts",
+    "title": "Smells Like Teen Spirit",
+    "channel": "Nirvana",
+    "tags": ["grunge", "rock"],
+    "bpm": 117,
+    "category": "90s"
+  },
+  {
+    "id": "uelHwf8o7_U",
+    "title": "Gangsta's Paradise",
+    "channel": "Coolio ft. L.V.",
+    "tags": ["rap", "hip-hop"],
+    "bpm": 80,
+    "category": "90s"
+  },
+  {
+    "id": "k4YRWT_Aldo",
+    "title": "Everybody (Backstreet's Back)",
+    "channel": "Backstreet Boys",
+    "tags": ["pop", "dance"],
+    "bpm": 112,
+    "category": "90s"
+  },
+  {
+    "id": "8WYHDfJDPDc",
+    "title": "No Scrubs",
+    "channel": "TLC",
+    "tags": ["r&b", "pop"],
+    "bpm": 92,
+    "category": "90s"
+  },
+  {
+    "id": "1lyu1KKwC74",
+    "title": "The Sign",
+    "channel": "Ace of Base",
+    "tags": ["pop", "eurodance"],
+    "bpm": 132,
+    "category": "90s"
+  },
+  {
+    "id": "tbNlMtqrYS0",
+    "title": "Wannabe",
+    "channel": "Spice Girls",
+    "tags": ["pop", "girl group"],
+    "bpm": 110,
+    "category": "90s"
+  },
+  {
+    "id": "btPJPFnesV4",
+    "title": "Eye of the Tiger",
+    "channel": "Survivor",
+    "tags": ["rock", "anthem"],
+    "bpm": 109,
+    "category": "rock"
+  },
+  {
+    "id": "fJ9rUzIMcZQ",
+    "title": "Bohemian Rhapsody",
+    "channel": "Queen",
+    "tags": ["rock", "opera"],
+    "bpm": 72,
+    "category": "rock"
+  },
+  {
+    "id": "1w7OgIMMRc4",
+    "title": "Sweet Child O' Mine",
+    "channel": "Guns N' Roses",
+    "tags": ["hard rock", "guitar"],
+    "bpm": 126,
+    "category": "rock"
+  },
+  {
+    "id": "bx1Bh8ZvH84",
+    "title": "Livin' on a Prayer",
+    "channel": "Bon Jovi",
+    "tags": ["rock", "anthem"],
+    "bpm": 123,
+    "category": "rock"
+  },
+  {
+    "id": "xwtdhWltSIg",
+    "title": "Stairway to Heaven",
+    "channel": "Led Zeppelin",
+    "tags": ["rock", "classic"],
+    "bpm": 82,
+    "category": "rock"
+  },
+  {
+    "id": "pAgnJDJN4VA",
+    "title": "Back in Black",
+    "channel": "AC/DC",
+    "tags": ["hard rock", "riff"],
+    "bpm": 94,
+    "category": "rock"
+  },
+  {
+    "id": "aGSKrC7dGcY",
+    "title": "Don't Stop Believin'",
+    "channel": "Journey",
+    "tags": ["rock", "classic"],
+    "bpm": 119,
+    "category": "rock"
+  },
+  {
+    "id": "oiXaT_1I-vw",
+    "title": "Thunderstruck",
+    "channel": "AC/DC",
+    "tags": ["hard rock", "guitar"],
+    "bpm": 133,
+    "category": "rock"
+  },
+  {
+    "id": "QYh6mYIJG2Y",
+    "title": "Give It Away",
+    "channel": "Red Hot Chili Peppers",
+    "tags": ["funk rock", "alternative"],
+    "bpm": 92,
+    "category": "funk"
+  },
+  {
+    "id": "OfnD6115tHE",
+    "title": "Superstition",
+    "channel": "Stevie Wonder",
+    "tags": ["funk", "soul"],
+    "bpm": 101,
+    "category": "funk"
+  },
+  {
+    "id": "mrZRURcb1cM",
+    "title": "Get Up (I Feel Like Being a) Sex Machine",
+    "channel": "James Brown",
+    "tags": ["funk", "soul"],
+    "bpm": 112,
+    "category": "funk"
+  },
+  {
+    "id": "bOH_mioL3TU",
+    "title": "Le Freak",
+    "channel": "Chic",
+    "tags": ["funk", "disco"],
+    "bpm": 120,
+    "category": "funk"
+  },
+  {
+    "id": "yURRmWtbTbo",
+    "title": "Uptown Funk",
+    "channel": "Mark Ronson ft. Bruno Mars",
+    "tags": ["funk", "pop"],
+    "bpm": 115,
+    "category": "funk"
+  },
+  {
+    "id": "oMBMgxUw6YQ",
+    "title": "Play That Funky Music",
+    "channel": "Wild Cherry",
+    "tags": ["funk", "disco"],
+    "bpm": 108,
+    "category": "funk"
+  },
+  {
+    "id": "awGYKMY4NLk",
+    "title": "Brick House",
+    "channel": "Commodores",
+    "tags": ["funk", "soul"],
+    "bpm": 103,
+    "category": "funk"
+  },
+  {
+    "id": "0Iqr0L4bUms",
+    "title": "Flash Light",
+    "channel": "Parliament",
+    "tags": ["funk", "p-funk"],
+    "bpm": 110,
+    "category": "funk"
+  },
+  {
+    "id": "_eRRab36XLI",
+    "title": "Lose Yourself",
+    "channel": "Eminem",
+    "tags": ["rap", "motivational"],
+    "bpm": 171,
+    "category": "rap"
+  },
+  {
+    "id": "hLQl3WQQoQ0",
+    "title": "Somebody That I Used to Know",
+    "channel": "Gotye ft. Kimbra",
+    "tags": ["indie", "pop"],
+    "bpm": 129,
+    "category": "pop"
+  },
+  {
+    "id": "aJOTlE1K90k",
+    "title": "Still D.R.E.",
+    "channel": "Dr. Dre ft. Snoop Dogg",
+    "tags": ["rap", "west coast"],
+    "bpm": 93,
+    "category": "rap"
+  },
+  {
+    "id": "RubBzkZzpUA",
+    "title": "Juicy",
+    "channel": "The Notorious B.I.G.",
+    "tags": ["rap", "east coast"],
+    "bpm": 96,
+    "category": "rap"
+  },
+  {
+    "id": "2Rw5MosKRm4",
+    "title": "Nuthin' but a 'G' Thang",
+    "channel": "Dr. Dre ft. Snoop Dogg",
+    "tags": ["g-funk", "rap"],
+    "bpm": 98,
+    "category": "rap"
+  },
+  {
+    "id": "nGt_JGHYEO4",
+    "title": "California Love",
+    "channel": "2Pac ft. Dr. Dre",
+    "tags": ["rap", "west coast"],
+    "bpm": 92,
+    "category": "rap"
+  },
+  {
+    "id": "30cKwMMifMI",
+    "title": "N.Y. State of Mind",
+    "channel": "Nas",
+    "tags": ["rap", "east coast"],
+    "bpm": 94,
+    "category": "rap"
+  },
+  {
+    "id": "d-diB65scQU",
+    "title": "Straight Outta Compton",
+    "channel": "N.W.A.",
+    "tags": ["rap", "gangsta"],
+    "bpm": 104,
+    "category": "rap"
+  },
+  {
+    "id": "hBe0VCso0g8",
+    "title": "HUMBLE.",
+    "channel": "Kendrick Lamar",
+    "tags": ["rap", "modern"],
+    "bpm": 150,
+    "category": "rap"
+  },
+  {
+    "id": "e-ORhEE9VVg",
+    "title": "Blinding Lights",
+    "channel": "The Weeknd",
+    "tags": ["synthwave", "pop"],
+    "bpm": 171,
+    "category": "pop"
+  },
+  {
+    "id": "fRh_vgS2dFE",
+    "title": "Sorry",
+    "channel": "Justin Bieber",
+    "tags": ["pop", "edm"],
+    "bpm": 100,
+    "category": "pop"
+  },
+  {
+    "id": "kJQP7kiw5Fk",
+    "title": "Despacito",
+    "channel": "Luis Fonsi ft. Daddy Yankee",
+    "tags": ["latin", "pop"],
+    "bpm": 89,
+    "category": "pop"
+  },
+  {
+    "id": "JGwWNGJdvx8",
+    "title": "Shape of You",
+    "channel": "Ed Sheeran",
+    "tags": ["pop", "dancehall"],
+    "bpm": 96,
+    "category": "pop"
+  },
+  {
+    "id": "RgKAFK5djSk",
+    "title": "See You Again",
+    "channel": "Wiz Khalifa ft. Charlie Puth",
+    "tags": ["pop", "rap"],
+    "bpm": 80,
+    "category": "pop"
+  },
+  {
+    "id": "CevxZvSJLk8",
+    "title": "Roar",
+    "channel": "Katy Perry",
+    "tags": ["pop", "anthem"],
+    "bpm": 90,
+    "category": "pop"
+  },
+  {
+    "id": "OPf0YbXqDm0",
+    "title": "Uptown Girl",
+    "channel": "Billy Joel",
+    "tags": ["pop", "rock"],
+    "bpm": 148,
+    "category": "pop"
+  },
+  {
+    "id": "SlPhMPnQ58k",
+    "title": "Moves Like Jagger",
+    "channel": "Maroon 5 ft. Christina Aguilera",
+    "tags": ["pop", "funk"],
+    "bpm": 128,
+    "category": "pop"
+  },
+  {
+    "id": "3JWTaaS7LdU",
+    "title": "I Will Always Love You",
+    "channel": "Whitney Houston",
+    "tags": ["ballad", "soul"],
+    "bpm": 68,
+    "category": "80s"
+  },
+  {
+    "id": "YkADj0TPrJA",
+    "title": "Dancing Queen",
+    "channel": "ABBA",
+    "tags": ["disco", "pop"],
+    "bpm": 101,
+    "category": "80s"
+  }
+]

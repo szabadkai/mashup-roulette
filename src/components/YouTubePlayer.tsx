@@ -15,6 +15,8 @@ export interface YouTubePlayerHandle {
   setPlaybackRate: (rate: number) => void
   loadVideo: (videoId: string) => void
   unmute: () => void
+  seekTo: (seconds: number) => void
+  getCurrentTime: () => number
 }
 
 interface Props {
@@ -43,6 +45,8 @@ const YouTubePlayer = forwardRef<YouTubePlayerHandle, Props>(
         setVolume: (v) => playerRef.current?.setVolume(v),
         setPlaybackRate: (r) => playerRef.current?.setPlaybackRate(r),
         unmute: () => playerRef.current?.unMute(),
+        seekTo: (s) => playerRef.current?.seekTo(s, true),
+        getCurrentTime: () => playerRef.current?.getCurrentTime?.() ?? 0,
         loadVideo: (id) => {
           if (playerRef.current && ready) {
             playerRef.current.loadVideoById(id)

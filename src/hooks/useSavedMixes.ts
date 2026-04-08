@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
 import type { SavedMix } from '../types'
 
-const STORAGE_KEY = 'lofi-mixer-v1-mixes'
+const STORAGE_KEY = 'mashup-mixer-v1-mixes'
 
 function loadFromStorage(): SavedMix[] {
   try {

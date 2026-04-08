@@ -15,6 +15,8 @@ declare namespace YT {
     mute(): void
     unMute(): void
     isMuted(): boolean
+    seekTo(seconds: number, allowSeekAhead: boolean): void
+    getCurrentTime(): number
     destroy(): void
   }
 

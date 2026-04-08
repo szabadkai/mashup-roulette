@@ -4,26 +4,26 @@ interface Props {
 }
 
 export default function Crossfader({ blend, onChange }: Props) {
-  const lofiPct = Math.round(blend)
-  const talkPct = 100 - lofiPct
+  const leftPct = Math.round(blend)
+  const rightPct = 100 - leftPct
 
   // Background gradient tracks the slider position
   const trackBg = `linear-gradient(to right,
-    rgba(0,207,255,0.5) 0%,
-    rgba(0,207,255,0.3) ${100 - blend}%,
-    rgba(255,184,0,0.3) ${100 - blend}%,
-    rgba(255,184,0,0.5) 100%
+    rgba(255,107,157,0.5) 0%,
+    rgba(255,107,157,0.3) ${blend}%,
+    rgba(0,207,255,0.3) ${blend}%,
+    rgba(0,207,255,0.5) 100%
   )`
 
   return (
     <div className="w-full">
       <div className="flex justify-between items-center mb-1">
-        <span className="text-xs font-mono" style={{ color: '#00CFFF' }}>
-          🎤 {talkPct}%
+        <span className="text-xs font-mono" style={{ color: '#FF6B9D' }}>
+          🅰 {leftPct}%
         </span>
         <span className="text-xs font-mono text-muted hidden sm:block">BLEND</span>
-        <span className="text-xs font-mono" style={{ color: '#FFB800' }}>
-          {lofiPct}% 🎵
+        <span className="text-xs font-mono" style={{ color: '#00CFFF' }}>
+          {rightPct}% 🅱
         </span>
       </div>
       <div className="relative h-2 rounded-full" style={{ background: trackBg }}>

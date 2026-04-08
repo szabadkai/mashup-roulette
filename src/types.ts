@@ -3,50 +3,90 @@ export interface Video {
   title: string
   channel: string
   tags: string[]
+  bpm: number
+  category: SongCategory
 }
 
-export type TempoRate = 0.25 | 0.5 | 0.75 | 1.0 | 1.25 | 1.5 | 1.75 | 2.0
-export const TEMPO_RATES: TempoRate[] = [0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0]
+export const SONG_CATEGORIES = ['80s', '90s', 'rock', 'funk', 'rap', 'pop', 'reggae', 'dancehall'] as const
+export type SongCategory = (typeof SONG_CATEGORIES)[number]
+
+export const CATEGORY_LABELS: Record<SongCategory, string> = {
+  '80s': '80s',
+  '90s': '90s',
+  rock: 'Rock',
+  funk: 'Funk',
+  rap: 'RAP',
+  pop: 'Pop',
+  reggae: 'Reggae',
+  dancehall: 'Dancehall',
+}
+
+export const CATEGORY_EMOJI: Record<SongCategory, string> = {
+  '80s': '🕺',
+  '90s': '💿',
+  rock: '🎸',
+  funk: '🎷',
+  rap: '🎤',
+  pop: '🎵',
+  reggae: '🌴',
+  dancehall: '🔥',
+}
 
 export type ViewMode = 'side-by-side' | 'overlay'
 
 export interface SavedMix {
   id: string
   name: string
-  lofiVideoId: string
-  lofiTitle: string
-  lofiChannel: string
-  talkVideoId: string
-  talkTitle: string
-  talkChannel: string
+  leftVideoId: string
+  leftTitle: string
+  leftChannel: string
+  rightVideoId: string
+  rightTitle: string
+  rightChannel: string
   blend: number
-  tempo: TempoRate
+  leftTempo: number
+  rightTempo: number
+  leftCategory: SongCategory | null
+  rightCategory: SongCategory | null
+  beatOffset: number  // seconds: positive = B delayed, negative = A delayed
   createdAt: string
 }
 
 export interface MixState {
-  lofiVideo: Video | null
-  talkVideo: Video | null
+  leftVideo: Video | null
+  rightVideo: Video | null
   blend: number
-  tempo: TempoRate
+  leftTempo: number
+  rightTempo: number
+  leftCategory: SongCategory | null
+  rightCategory: SongCategory | null
+  beatOffset: number  // seconds: positive = B starts later, negative = A starts later
   isPlaying: boolean
   viewMode: ViewMode
 }
 
 export const DEFAULT_MIX_STATE: MixState = {
-  lofiVideo: null,
-  talkVideo: null,
-  blend: 70,
-  tempo: 1.0,
+  leftVideo: null,
+  rightVideo: null,
+  blend: 50,
+  leftTempo: 1.0,
+  rightTempo: 1.0,
+  leftCategory: null,
+  rightCategory: null,
+  beatOffset: 0,
   isPlaying: false,
   viewMode: 'side-by-side',
 }
 
 export type MixAction =
-  | { type: 'SELECT_LOFI'; video: Video }
-  | { type: 'SELECT_TALK'; video: Video }
+  | { type: 'SELECT_LEFT'; video: Video }
+  | { type: 'SELECT_RIGHT'; video: Video }
   | { type: 'SET_BLEND'; value: number }
-  | { type: 'SET_TEMPO'; value: TempoRate }
+  | { type: 'SET_LEFT_TEMPO'; value: number }
+  | { type: 'SET_RIGHT_TEMPO'; value: number }
+  | { type: 'SET_LEFT_CATEGORY'; value: SongCategory | null }
+  | { type: 'SET_RIGHT_CATEGORY'; value: SongCategory | null }
+  | { type: 'SET_BEAT_OFFSET'; value: number }
   | { type: 'TOGGLE_PLAY' }
   | { type: 'SET_PLAYING'; value: boolean }
   | { type: 'SET_VIEW_MODE'; mode: ViewMode }
@@ -54,10 +94,14 @@ export type MixAction =
 
 export function mixerReducer(state: MixState, action: MixAction): MixState {
   switch (action.type) {
-    case 'SELECT_LOFI': return { ...state, lofiVideo: action.video }
-    case 'SELECT_TALK': return { ...state, talkVideo: action.video }
+    case 'SELECT_LEFT': return { ...state, leftVideo: action.video }
+    case 'SELECT_RIGHT': return { ...state, rightVideo: action.video }
     case 'SET_BLEND': return { ...state, blend: action.value }
-    case 'SET_TEMPO': return { ...state, tempo: action.value }
+    case 'SET_LEFT_TEMPO': return { ...state, leftTempo: action.value }
+    case 'SET_RIGHT_TEMPO': return { ...state, rightTempo: action.value }
+    case 'SET_LEFT_CATEGORY': return { ...state, leftCategory: action.value }
+    case 'SET_RIGHT_CATEGORY': return { ...state, rightCategory: action.value }
+    case 'SET_BEAT_OFFSET': return { ...state, beatOffset: action.value }
     case 'TOGGLE_PLAY': return { ...state, isPlaying: !state.isPlaying }
     case 'SET_PLAYING': return { ...state, isPlaying: action.value }
     case 'SET_VIEW_MODE': return { ...state, viewMode: action.mode }

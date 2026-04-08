@@ -103,9 +103,10 @@ const SlotReel = forwardRef<SlotReelHandle, Props>(
     prevSpinning.current = isSpinning
 
     const isGold = accentColor === 'gold'
-    const glowColor = isGold ? 'rgba(255,184,0,0.6)' : 'rgba(0,207,255,0.6)'
-    const borderColor = isGold ? '#FFB800' : '#00CFFF'
-    const textColor = isGold ? '#FFB800' : '#00CFFF'
+    const isPink = accentColor === 'pink'
+    const glowColor = isPink ? 'rgba(255,107,157,0.6)' : isGold ? 'rgba(255,184,0,0.6)' : 'rgba(0,207,255,0.6)'
+    const borderColor = isPink ? '#FF6B9D' : isGold ? '#FFB800' : '#00CFFF'
+    const textColor = isPink ? '#FF6B9D' : isGold ? '#FFB800' : '#00CFFF'
 
     // Build the strip: items repeated REPEATS times
     const strip = Array(REPEATS).fill(items).flat() as Video[]
@@ -142,7 +143,9 @@ const SlotReel = forwardRef<SlotReelHandle, Props>(
             style={{
               top: ITEM_HEIGHT,
               height: ITEM_HEIGHT,
-              background: isGold
+              background: isPink
+                ? 'rgba(255,107,157,0.06)'
+                : isGold
                 ? 'rgba(255,184,0,0.06)'
                 : 'rgba(0,207,255,0.06)',
               borderTop: `1px solid ${borderColor}30`,
@@ -186,9 +189,16 @@ const SlotReel = forwardRef<SlotReelHandle, Props>(
                     >
                       {video.title}
                     </p>
-                    <p className="text-xs mt-0.5" style={{ color: '#54547A', fontSize: '0.6rem' }}>
-                      {video.channel}
-                    </p>
+                    <div className="flex items-center gap-1 mt-0.5">
+                      <p className="text-xs" style={{ color: '#54547A', fontSize: '0.55rem' }}>
+                        {video.channel}
+                      </p>
+                      {'bpm' in video && (video as Video & { bpm: number }).bpm > 0 && (
+                        <span className="text-xs font-mono" style={{ color: '#54547A', fontSize: '0.5rem' }}>
+                          · {(video as Video & { bpm: number }).bpm}bpm
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
               )

@@ -3,50 +3,50 @@ import SlotReel, { type SlotReelHandle } from './SlotReel'
 import type { Video } from '../types'
 
 interface Props {
-  lofiVideos: Video[]
-  talkVideos: Video[]
-  lofiIdx: number
-  talkIdx: number
-  onLofiSelect: (idx: number) => void
-  onTalkSelect: (idx: number) => void
-  onSpinComplete: (lofi: Video, talk: Video) => void
+  leftVideos: Video[]
+  rightVideos: Video[]
+  leftIdx: number
+  rightIdx: number
+  onLeftSelect: (idx: number) => void
+  onRightSelect: (idx: number) => void
+  onSpinComplete: (left: Video, right: Video) => void
 }
 
 export default function SlotMachine({
-  lofiVideos,
-  talkVideos,
-  lofiIdx,
-  talkIdx,
-  onLofiSelect,
-  onTalkSelect,
+  leftVideos,
+  rightVideos,
+  leftIdx,
+  rightIdx,
+  onLeftSelect,
+  onRightSelect,
   onSpinComplete,
 }: Props) {
-  const lofiReelRef = useRef<SlotReelHandle>(null)
-  const talkReelRef = useRef<SlotReelHandle>(null)
+  const leftReelRef = useRef<SlotReelHandle>(null)
+  const rightReelRef = useRef<SlotReelHandle>(null)
   const [isSpinning, setIsSpinning] = useState(false)
-  const [phase, setPhase] = useState<'idle' | 'spinning' | 'lofi-done' | 'done'>('idle')
+  const [phase, setPhase] = useState<'idle' | 'spinning' | 'left-done' | 'done'>('idle')
 
   const handleSpin = () => {
-    if (isSpinning || lofiVideos.length === 0 || talkVideos.length === 0) return
+    if (isSpinning || leftVideos.length === 0 || rightVideos.length === 0) return
 
-    const newLofiIdx = Math.floor(Math.random() * lofiVideos.length)
-    const newTalkIdx = Math.floor(Math.random() * talkVideos.length)
+    const newLeftIdx = Math.floor(Math.random() * leftVideos.length)
+    const newRightIdx = Math.floor(Math.random() * rightVideos.length)
 
     setIsSpinning(true)
     setPhase('spinning')
 
     // Left reel stops first at 2s
-    lofiReelRef.current?.spin(newLofiIdx, 2000, () => {
-      setPhase('lofi-done')
+    leftReelRef.current?.spin(newLeftIdx, 2000, () => {
+      setPhase('left-done')
     })
 
     // Right reel stops second at 3s
-    talkReelRef.current?.spin(newTalkIdx, 3000, () => {
+    rightReelRef.current?.spin(newRightIdx, 3000, () => {
       setPhase('done')
       setIsSpinning(false)
       // Auto-play after brief celebrate moment
       setTimeout(() => {
-        onSpinComplete(lofiVideos[newLofiIdx], talkVideos[newTalkIdx])
+        onSpinComplete(leftVideos[newLeftIdx], rightVideos[newRightIdx])
         setPhase('idle')
       }, 400)
     })
@@ -55,7 +55,7 @@ export default function SlotMachine({
   const spinLabel =
     phase === 'idle' ? 'SPIN' :
     phase === 'spinning' ? 'SPINNING...' :
-    phase === 'lofi-done' ? 'LOADING...' :
+    phase === 'left-done' ? 'LOADING...' :
     phase === 'done' ? 'NICE!' : 'SPIN'
 
   return (
@@ -89,19 +89,19 @@ export default function SlotMachine({
             WebkitTextFillColor: 'transparent',
           }}
         >
-          ✦ CHILLHOP ROULETTE ✦
+          ✦ MASHUP ROULETTE ✦
         </span>
       </div>
 
       {/* Reels row */}
       <div className="flex items-start justify-center gap-2">
         <SlotReel
-          ref={lofiReelRef}
-          items={lofiVideos}
-          selectedIdx={lofiIdx}
-          onSelect={onLofiSelect}
-          accentColor="gold"
-          label="🎵 Lofi"
+          ref={leftReelRef}
+          items={leftVideos}
+          selectedIdx={leftIdx}
+          onSelect={onLeftSelect}
+          accentColor="pink"
+          label="🅰 Deck A"
           isSpinning={isSpinning}
         />
 
@@ -120,12 +120,12 @@ export default function SlotMachine({
         </div>
 
         <SlotReel
-          ref={talkReelRef}
-          items={talkVideos}
-          selectedIdx={talkIdx}
-          onSelect={onTalkSelect}
+          ref={rightReelRef}
+          items={rightVideos}
+          selectedIdx={rightIdx}
+          onSelect={onRightSelect}
           accentColor="cyan"
-          label="🎤 Talk"
+          label="🅱 Deck B"
           isSpinning={isSpinning}
         />
       </div>
